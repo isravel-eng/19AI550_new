@@ -1,6 +1,6 @@
 # Ex.No: 3  Basic movements in Unity 
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 27-10-26                                                                         
+### REGISTER NUMBER : 212225240054
 ### AIM: 
  To learn the basic movements translation,scaling and rotation of game objects through code.
 ### Procedure:
@@ -18,51 +18,64 @@
 ### Program 
 ```
 using UnityEngine;
-public class TransformOperations : MonoBehaviour
+
+public class Transformation : MonoBehaviour
 {
-    public Transform object1; // Object for translation
-    public Transform object2; // Object for rotation
-    public Transform object3; // Object for scaling
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Transform o1, o2, o3;
+    void Start()
+    {
+        
+    }
 
-    public float moveSpeed = 2f;  // Speed of translation
-    public float rotateSpeed = 50f; // Speed of rotation
-    public float scaleSpeed = 0.5f; // Speed of scaling
-
+    // Update is called once per frame
     void Update()
     {
-        // Translate (Move) object1 along the X-axis- Time.deltaTime to make movement smooth across all frame rates
-        if (object1 != null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-           // object1.position += Vector3.right * moveSpeed;
-               object1.Translate(0.02f,0,0);
-
+            o1.Translate(2f, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            o2.Rotate(0, 10f, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.D)){
+            o3.localScale += new Vector3(2f, 2f, 2f);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            o1.Translate(-2f, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            o3.localScale += new Vector3(-2f, -2f, -2f);
         }
 
-        // Rotate object2 around the Y-axis
-        if (object2 != null)
-        {
-            //object2.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
-            //object2.Rotate(0,0.02f.0);
-        }
-
-        // Scale object3 up and down
-        if (object3 != null)
-        {
-           // float scaleChange = Mathf.PingPong(Time.time * scaleSpeed, 1f) + 0.5f; // generates a value that moves back and forth between 0 and length
-           // object3.localScale = new Vector3(scaleChange, scaleChange, scaleChange);
-            object3.localScale+=new Vector3(0.02f.0.02f,0);
-
-        }
     }
 }
+
 ```
 ### Output:
 
+## Translating movement along x-axis using cylinder object
+
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/0096f821-d8ec-4935-b567-d66ad6335e40" />
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/4a1b56fe-ce7b-4c01-aeb0-09ce6433bbf6" />
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/353b1adc-6e03-435a-b146-d93eaf861250" />
 
 
+## Rotating movement using cube object
 
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/32ad3cfa-3302-414d-af5a-5b1df61b35ba" />
+<img width="1532" height="862" alt="image" src="https://github.com/user-attachments/assets/0b08a788-8226-4511-979d-1e7407268332" />
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/40c2ad8d-e449-45a2-808e-14611a40f612" />
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/068fedb0-cdb7-49c0-a897-e64b07068f5e" />
 
+## Scaling movement using capsule
 
+<img width="1533" height="862" alt="image" src="https://github.com/user-attachments/assets/b615e6e2-1214-4e97-bb28-fdfc22a50410" />
+<img width="1535" height="863" alt="image" src="https://github.com/user-attachments/assets/3399de9d-f1e7-4179-9c23-995eea12c8cc" />
+<img width="1535" height="862" alt="image" src="https://github.com/user-attachments/assets/422d2919-b876-4531-9fa6-0c06bf76c53e" />
 
 
 ### Result:
